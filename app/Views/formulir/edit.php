@@ -14,7 +14,7 @@
 <div class="col-lg-12">
     <div class="card rounded-0">
         <h5 class=" card-header">
-            FORM TAMBAH CALON PESERTA DIDIK
+            Edit Biodata : <strong> <?= $siswa['nama_siswa'] ?></strong>
         </h5>
         <?= form_open('formulir/add') ?>
         <div class="card-body">

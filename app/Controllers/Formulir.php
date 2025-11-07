@@ -142,6 +142,43 @@ class Formulir extends BaseController
 
 
 
+    public function update($slug)
+    {
+        $ModelFormulir = new \App\Models\ModelFormulir();
+
+        // Validasi input dulu (opsional tapi disarankan)
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'nama_siswa'   => 'required',
+            'alamat'       => 'required',
+            'tanggal_lahir' => 'required',
+            'ke_jenjang'   => 'required'
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        }
+
+        // Ambil data dari form
+        $data = [
+            'nama_siswa'   => $this->request->getPost('nama_siswa'),
+            'alamat'       => $this->request->getPost('alamat'),
+            'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
+            'ke_jenjang'   => $this->request->getPost('ke_jenjang'),
+            'jurusan'      => $this->request->getPost('jurusan'),
+            'program'      => $this->request->getPost('program'),
+            'id_jenjang'   => $this->request->getPost('jenjang'),
+            'nama_sekolah' => $this->request->getPost('nama_sekolah'),
+        ];
+
+        // Update ke database berdasarkan slug
+        $ModelFormulir->where('slug', $slug)->set($data)->update();
+
+        // Redirect kembali ke halaman utama dengan pesan sukses
+        return redirect()->to(base_url('formulir'))->with('success', 'Data siswa berhasil diperbarui!');
+    }
+
+
 
 
 

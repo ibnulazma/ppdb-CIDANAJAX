@@ -154,7 +154,12 @@
                  </ul>
              </li>
 
-
+             <li class="nav-item ">
+                 <a href="<?= base_url('auth/logout') ?>" class="btn btn-block bg-white">
+                     <i class=" nav-icon fas fa-sign-out-alt"></i>
+                     Logout
+                 </a>
+             </li>
          </ul>
      </nav>
      <!-- /.sidebar-menu -->
