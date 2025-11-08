@@ -55,6 +55,7 @@ $routes->get('/formulir/dataAsalSekolah/(:num)', 'Formulir::dataAsalSekolah/$1')
 $routes->post('/formulir/simpan', 'Formulir::simpan');
 $routes->post('/formulir/getData', 'Formulir::getData');
 $routes->get('formulir/edit/(:segment)', 'Formulir::edit/$1');
+$routes->get('formulir/detail/(:segment)', 'Formulir::detail/$1');
 $routes->post('formulir/update/(:segment)', 'Formulir::update/$1');
 $routes->get('formulir/getSekolahByJenjang/(:num)', 'Formulir::getSekolahByJenjang/$1');
 

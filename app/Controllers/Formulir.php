@@ -59,20 +59,7 @@ class Formulir extends BaseController
         ]);
     }
 
-    public function detail($id)
-    {
-        $model = new ModelFormulir();
-        $data = [
-            'siswa' => $model->find($id),
-            'title'             => 'PPDB',
-            'subtitle'          => 'Formulir Insan Kamil',
-            'menu'              => 'formulir',
-            'submenu'           => 'formulir',
 
-
-        ];
-        return view('siswa/detail', $data);
-    }
 
     public function setSiswaSession()
     {
@@ -96,6 +83,32 @@ class Formulir extends BaseController
 
         $jenjang = $this->ModelJenjang->AllData();
         return view('formulir/edit', [
+            'siswa' => $siswa,
+            'title'             => 'PPDB',
+            'subtitle'          => 'Formulir Insan Kamil',
+            'menu'              => 'formulir',
+            'submenu'           => 'formulir',
+            'jenjang'           => $jenjang
+        ]);
+    }
+
+
+
+
+    public function detail($slug)
+    {
+        $siswa = $this->ModelFormulir->select('tbl_formulir.*, tbl_jenjang.jenjang')
+            ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = tbl_formulir.id_jenjang', 'left')
+            ->where('tbl_formulir.slug', $slug)
+            ->first();
+
+
+        if (!$siswa) {
+            return redirect()->to(base_url('formulir'))->with('error', 'Data siswa tidak ditemukan!');
+        }
+
+        $jenjang = $this->ModelJenjang->AllData();
+        return view('formulir/detail', [
             'siswa' => $siswa,
             'title'             => 'PPDB',
             'subtitle'          => 'Formulir Insan Kamil',

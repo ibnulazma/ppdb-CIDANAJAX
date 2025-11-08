@@ -28,7 +28,8 @@ class ModelFormulir extends Model
         'catatan',
         'program',
         'ke_jenjang',
-        'slug'
+        'slug',
+        'foto_siswa'
     ];
 
     protected $useTimestamps = false;

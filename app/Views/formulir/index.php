@@ -19,8 +19,8 @@
             <div class="tombol float-right ">
                 <a href="<?= base_url('formulir/tambah') ?>" class="btn btn-sm btn-success rounded-0"><i class="fas fa-plus"></i> Tambah</a>
                 <button class="btn btn-sm btn-primary rounded-0 " id="btnEdit"><i class="fas fa-pencil-alt"></i> Ubah</button>
-                <button class="btn btn-sm btn-info rounded-0 " id="btnDetail" disabled><i class="fas fa-user"></i> Detail</button>
-                <button class="btn btn-sm btn-danger rounded-0 " id="btnDelete" disabled><i class="fas fa-user"></i> Hapus</button>
+                <button class="btn btn-sm btn-info rounded-0 " id="btnDetail"><i class="fas fa-user"></i> Detail</button>
+                <button class="btn btn-sm btn-danger rounded-0 " id="btnDelete"><i class="fas fa-user"></i> Hapus</button>
             </div>
 
         </div>
