@@ -65,6 +65,7 @@ $routes->get('formulir/getSekolahByJenjang/(:num)', 'Formulir::getSekolahByJenja
 $routes->get('seragam', 'Seragam::index');
 $routes->post('seragam/cari', 'Seragam::cari');
 $routes->post('seragam/bayar', 'Seragam::bayar');
+$routes->get('/seragam/kwitansi/(:any)/(:any)', 'Seragam::kwitansi/$1/$2');
 
 
 

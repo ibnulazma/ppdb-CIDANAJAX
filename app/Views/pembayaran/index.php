@@ -2,22 +2,40 @@
 <?= $this->section('content') ?>
 
 
-<div class="card mb-3">
-    <div class="card-body">
-        <label for="kode_pendaftaran" class="form-label fw-bold">Kode Pendaftaran</label>
-        <input type="text" id="kode_pendaftaran" class="form-control mb-2" placeholder="Masukkan / Scan kode pendaftaran...">
-        <button id="btnCari" class="btn btn-primary">Cari</button>
+
+<style>
+    .masuk {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+<div class="col-lg-12">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="form-inline">
+                        <div class="form-group mx-sm-4 mb-2">
+                            <label for="inputPassword2" class="sr-only">Password</label>
+                            <input type="text" id="kode_pendaftaran" class="form-control" placeholder="Masukkan / Scan kode pendaftaran..." width="200px">
+                        </div>
+                        <button id="btnCari" class="btn btn-primary mb-2">Cari</button>
+                    </div>
+
+                    <div id="info-siswa" class="mx-sm-4 mt-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <!-- 🧾 Data Siswa -->
+            <div class="card mb-3" id="card-siswa">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-<!-- 🧾 Data Siswa -->
-<div class="card mb-3" id="card-siswa" style="display:none;">
-    <div class="card-body">
-        <h5>Data Siswa</h5>
-        <div id="info-siswa"></div>
-    </div>
-</div>
-
 <!-- 👕 Daftar Item Seragam -->
 <div class="card mb-3" id="card-item" style="display:none;">
     <div class="card-body">
@@ -68,7 +86,6 @@
         <div id="riwayat-bayar"></div>
     </div>
 </div>
-
 
 
 
