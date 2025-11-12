@@ -8,6 +8,8 @@
         display: flex;
         justify-content: space-between;
     }
+
+    .mantap {}
 </style>
 <div class="col-lg-12">
     <div class="row">
