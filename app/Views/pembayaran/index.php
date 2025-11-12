@@ -2,81 +2,73 @@
 <?= $this->section('content') ?>
 
 
-<div class="col-md-12">
+<div class="card mb-3">
+    <div class="card-body">
+        <label for="kode_pendaftaran" class="form-label fw-bold">Kode Pendaftaran</label>
+        <input type="text" id="kode_pendaftaran" class="form-control mb-2" placeholder="Masukkan / Scan kode pendaftaran...">
+        <button id="btnCari" class="btn btn-primary">Cari</button>
+    </div>
+</div>
 
+<!-- 🧾 Data Siswa -->
+<div class="card mb-3" id="card-siswa" style="display:none;">
+    <div class="card-body">
+        <h5>Data Siswa</h5>
+        <div id="info-siswa"></div>
+    </div>
+</div>
 
-    <div class="card">
-        <div class="card-body">
-            <div class="mb-3">
-                <label for=""> Cari </label>
-                <input type="text" id="kode_registrasi" class="form-control" placeholder="Scan / Masukkan Kode Registrasi">
-            </div>
+<!-- 👕 Daftar Item Seragam -->
+<div class="card mb-3" id="card-item" style="display:none;">
+    <div class="card-body">
+        <h5>Daftar Item Seragam</h5>
+        <table class="table table-bordered" id="tabel-item">
+            <thead>
+                <tr>
+                    <th>Nama Item</th>
+                    <th>Harga</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
 
-            <div id="data-siswa" class="mb-3"></div>
-            <table class="table table-bordered" id="tabel-item" style="display:none;">
+<!-- 💳 Form Pembayaran -->
+<div class="card mb-3" id="formPembayaran" style="display:none;">
+    <div class="card-body">
+        <form id="formBayar">
+            <input type="hidden" id="kode_pendaftaran" name="kode_pendaftaran">
+
+            <h5>Item yang Akan Dibayar</h5>
+            <table class="table table-sm" id="daftarBayar">
                 <thead>
                     <tr>
-                        <th>Nama Item</th>
-                        <th>Harga</th>
-                        <th>Sudah Bayar</th>
-                        <th>Sisa</th>
+                        <th>Item</th>
+                        <th>Nominal Bayar</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
             </table>
 
-            <div id="riwayat-bayar"></div>
-        </div>
+            <div class="fw-bold">
+                Total Bayar: Rp <span id="totalBayar">0</span>
+            </div>
+
+            <button id="btnSimpan" type="button" class="btn btn-success mt-2">Simpan Pembayaran</button>
+        </form>
     </div>
-
 </div>
-<!-- Modal -->
-<!-- <div class="modal fade" id="modalBayar" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Pembayaran</h5>
-            </div>
-            <div class="modal-body">
-                <form id="formBayar">
-                    <input type="hidden" name="kode_pendaftaran" id="kodeBayar">
-                    <div class="mb-2">
-                        <label>Total Harga</label>
-                        <input type="number" class="form-control" name="total_harga" id="totalHarga" readonly>
-                    </div>
-                    <div class="mb-2">
-                        <label>Nominal Bayar</label>
-                        <input type="number" class="form-control" name="dibayar" id="dibayar">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button id="btnSimpan" class="btn btn-primary">Simpan</button>
-            </div>
-        </div>
+
+<!-- 📜 Riwayat Pembayaran -->
+<div class="card" id="card-riwayat" style="display:none;">
+    <div class="card-body">
+        <div id="riwayat-bayar"></div>
     </div>
-</div> -->
-
-
-<div id="formPembayaran" style="display:none; margin-top:20px;">
-    <h5>Item yang Akan Dibayar</h5>
-    <form id="formBayar">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Nama Item</th>
-                    <th>Nominal Bayar</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody id="daftarBayar"></tbody>
-        </table>
-        <div class="text-end">
-            <h6>Total Bayar: <span id="totalBayar">0</span></h6>
-            <button type="submit" id="btnSimpan" class="btn btn-primary">Simpan Pembayaran</button>
-        </div>
-    </form>
 </div>
+
 
 
 
