@@ -39,7 +39,7 @@
                             style="width: 130px; height: 130px; object-fit: cover; align-items:center; text-align:center">
 
                         <div>
-                            <input type="file" name="foto" class="form-control mt-2">
+                            <input type="file" name="foto" class="form-control form-control-sm mt-2">
                         </div>
                     </div>
 
@@ -48,7 +48,13 @@
         </div>
         <div class="col-lg-9">
             <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <a href="<?= base_url('formulir') ?>" class="btn btn-success btn-sm float-right">Kembali</a>
+                    </div>
+                </div>
                 <div class="card-body">
+
                     <div class="row">
                         <div class="col-lg-4">
                             <strong><i class="fas fa-book mr-1"></i> Nama Siswa</strong>
@@ -91,7 +97,7 @@
                                 <?= $siswa['alamat'] ?> </p>
                         </div>
                         <div class="col-lg-4">
-                            <strong><i class="fa-solid fa-people-group"></i> Orang Tua</strong>
+                            <strong><i class="fas fa-user-friends"></i> Orang Tua</strong>
 
                             <p class="text-muted">
                                 <?= $siswa['orangtua'] ?>
@@ -105,10 +111,10 @@
 
                             <hr>
 
-                            <strong><i class="fa-solid fa-location-pin"></i> Alamat</strong>
+                            <strong><i class="fa-solid fa-mobile-screen-button"></i> No Hp</strong>
 
                             <p class="text-muted">
-                                <?= $siswa['alamat'] ?> </p>
+                                <?= $siswa['no_telp'] ?> </p>
                         </div>
                     </div>
                 </div>

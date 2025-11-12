@@ -69,6 +69,7 @@
  <script src="<?= base_url() ?>/AdminLTE/dist/js/simpan.js"></script>
  <script src="<?= base_url() ?>/AdminLTE/dist/js/transaksi.js"></script>
  <script src="<?= base_url() ?>/AdminLTE/dist/js/formulir.js"></script>
+ <script src="<?= base_url() ?>/AdminLTE/dist/js/seragam.js"></script>
  <!-- AkhirChart -->
 
 

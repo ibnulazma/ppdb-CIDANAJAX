@@ -90,6 +90,8 @@ class Filters extends BaseConfig
                     'formulir/*',
                     'transaksi',
                     'transaksi/*',
+                    'seragam',
+                    'seragam/*',
                     '/'
                 ]
             ],

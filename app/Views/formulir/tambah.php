@@ -69,7 +69,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="">Asal Sekolah</label>
-                        <select name="jenjang" id="jenjang" class="form-control">
+                        <select name="id_jenjang" id="jenjang" class="form-control">
                             <option value="">Pilih</option>
                             <?php foreach ($jenjang as $data) { ?>
                                 <option value="<?= $data['id_jenjang'] ?>"><?= $data['jenjang'] ?></option>

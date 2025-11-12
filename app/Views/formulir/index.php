@@ -25,19 +25,21 @@
 
         </div>
         <div class="card-body">
-            <table id="tabelSiswa" class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Kode Pendaftaran</th>
-                        <th>Nama Peserta Didik</th>
-                        <th>Alamat</th>
-                        <th>No Telp</th>
-                        <th>Orang Tua</th>
-                        <th>Tanggal</th>
-                    </tr>
-                </thead>
-            </table>
+            <div class="table-responsive">
+                <table id="tabelSiswa" class="table table-bordered table-striped ">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Kode Pendaftaran</th>
+                            <th>Nama Peserta Didik</th>
+                            <th>Alamat</th>
+                            <th>No Telp</th>
+                            <th>Orang Tua</th>
+                            <th>Tanggal</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
         <div class="card-footer">
             <button class="btn btn-sm btn-primary rounded-0">unduh data</button>
@@ -48,9 +50,61 @@
     </div>
 </div>
 
+<?php
+$errors = session()->getFlashdata('errors');
+$pesan  = session()->getFlashdata('pesan');
+$error  = session()->getFlashdata('error');
+?>
 
 
 
+<script src="<?= base_url('AdminLTE/plugins/jquery/jquery.min.js') ?>"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    <?php if ($pesan) : ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            backdrop: false,
+            text: '<?= esc($pesan) ?>',
+            showConfirmButton: false,
+            timer: 2000
+        });
+    <?php elseif ($error) : ?>
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: '<?= esc($error) ?>',
+            backdrop: false,
+            showConfirmButton: true
+        });
+    <?php endif; ?>
+
+    <?php if ($errors) : ?>
+        Swal.fire({
+            icon: 'warning',
+            title: 'Validasi Gagal!',
+            backdrop: false,
+            html: `
+                <ul style="text-align:left;">
+                    <?php foreach ($errors as $err) : ?>
+                        <li><?= esc($err) ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            `,
+            confirmButtonText: 'Ok'
+        });
+    <?php endif; ?>
+
+    function myFunction() {
+        var show = document.getElementById('Show');
+        if (show.type == 'password') {
+            show.type = 'text';
+        } else {
+            show.type = 'password';
+        }
+    }
+</script>
 
 
 
@@ -72,22 +126,6 @@
             errorMessage.style.display = "block";
         }
     }
-
-    <?php if (session()->getFlashdata('pesan')): ?>
-        Swal.fire({
-            title: 'Berhasil!',
-            text: '<?= session()->getFlashdata('pesan') ?>',
-            icon: 'success',
-            showCancelButton: true,
-            confirmButtonText: 'Cetak',
-            cancelButtonText: 'Tutup',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Redirect to the print page using the id_formulir from flashdata
-                window.location.href = '<?= site_url('formulir/cetak/' . session()->getFlashdata('id_formulir')) ?>';
-            }
-        });
-    <?php endif; ?>
 </script>
 
 

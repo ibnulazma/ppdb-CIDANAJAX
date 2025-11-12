@@ -23,7 +23,6 @@ class ModelTransaksi extends Model
     public function getTableFormulir()
     {
         $builder = $this->db->table('tbl_formulir');
-        $builder->whereIn('jenjang', ['SMA', 'SMK']);
         return $builder->get()->getResultArray();
     }
 
@@ -70,7 +69,7 @@ class ModelTransaksi extends Model
 
     public function getFilteredTransaksi($tanggal = null, $search = null)
     {
-        $builder = $this->select('tbl_formulir.nama_siswa, tbl_formulir.jenjang, SUM(tbl_transaksi.jumlah) as total_transaksi')
+        $builder = $this->select('tbl_formulir.nama_siswa, tbl_formulir.id_jenjang, SUM(tbl_transaksi.jumlah) as total_transaksi')
             ->join('tbl_formulir', 'tbl_formulir.id_formulir = tbl_transaksi.id_formulir', 'left')
             ->groupBy('tbl_formulir.nama_siswa');
 

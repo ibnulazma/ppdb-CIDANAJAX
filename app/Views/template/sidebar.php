@@ -86,6 +86,14 @@
                  </a>
              </li>
              <li class="nav-item">
+                 <a href="<?= base_url('seragam') ?>" class="nav-link <?= $menu == 'seragam' ? 'active' : '' ?>">
+                     <i class="nav-icon fas fa-money-bill-wave-alt"></i>
+                     <p>
+                         Pembayaran Seragam
+                     </p>
+                 </a>
+             </li>
+             <li class="nav-item">
                  <a href="<?= base_url('rekap') ?>" class="nav-link">
                      <i class="nav-icon fas fa-paper-plane"></i>
                      <p>

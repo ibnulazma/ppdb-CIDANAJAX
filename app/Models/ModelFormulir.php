@@ -10,7 +10,7 @@ class ModelFormulir extends Model
     protected $table = 'tbl_formulir';
     protected $primaryKey = 'id_formulir';
     protected $allowedFields = [
-        'kode_formulir',
+        'kode_pendaftaran',
         'nama_siswa',
         'alamat',
         'orangtua',
@@ -29,7 +29,8 @@ class ModelFormulir extends Model
         'program',
         'ke_jenjang',
         'slug',
-        'foto_siswa'
+        'foto_siswa',
+        'qr_code'
     ];
 
     protected $useTimestamps = false;

@@ -14,7 +14,8 @@
         "laminas/laminas-escaper": "^2.8",
         "psr/log": "^1.1",
         "ifsnop/mysqldump-php": "^2.11",
-        "dompdf/dompdf": "^2.0"
+        "dompdf/dompdf": "^2.0",
+        "endroid/qr-code": "^4.6"
     },
     "require-dev": {
         "codeigniter/coding-standard": "^1.1",
